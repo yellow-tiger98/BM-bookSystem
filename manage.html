@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>BM图书管理系统后台</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">BM图书管理系统后台</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li id="sm" class="active"><a id="staffm" href="#yuangong" data-toggle="tab">员工管理<span class="sr-only">(current)</span></a></li>
+                <li id="bm"><a id="bookm" href="#tushu" data-toggle="tab">图书管理<span class="sr-only">(current)</span></a></li>
+                <li id="bwm"><a id="borrowm" href="#liutong" data-toggle="tab">流通管理<span class="sr-only">(current)</span></a></li>
+                <li id="om"><a id="orderm" href="#dingdan" data-toggle="tab">订单管理<span class="sr-only">(current)</span></a></li>
+            </ul>
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade in active" id="yuangong">
+        <div class="row">
+            <div class="col-md-6 cl-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">员工信息编辑</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="staffid">员工ID</label>
+                                <input type="text" class="form-control" id="staffid" placeholder="请输入员工ID">
+                            </div>
+                            <div class="form-group">
+                                <label for="staffname">员工姓名</label>
+                                <input type="text" class="form-control" id="staffname" placeholder="请输入员工姓名">
+                            </div>
+                            <div class="form-group">
+                                <label for="staffpwd">员工密码</label>
+                                <input type="text" class="form-control" id="staffpwd" placeholder="请输入员工密码">
+                            </div>
+                            <div class="form-group">
+                                <label for="staffsex">员工性别</label>
+                                <input type="text" class="form-control" id="staffsex" placeholder="请输入员工性别">
+                            </div>
+                            <div class="form-group">
+                                <label for="staffage">员工年龄</label>
+                                <input type="text" class="form-control" id="staffage" placeholder="请输入员工年龄">
+                            </div>
+                            <div class="form-group">
+                                <label for="stafffunc">员工职能</label>
+                                <input type="text" class="form-control" id="stafffunc" placeholder="请输入员工职能">
+                            </div>
+
+                            <button class="btn btn-primary" id="btnstaff">提交添加</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">员工列表</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-bordered table-hover" id="stafftable">
+                            <thead>
+                                <tr>
+                                    <th>员工ID</th>
+                                    <th>员工姓名</th>
+                                    <th>员工性别</th>
+                                    <th>员工年龄</th>
+                                    <th>员工职能</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="list">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="tab-pane fade" id="tushu">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">图书编辑</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form>
+                                <!-- <div class="form-group">
+                                    <label for="bookid">图书ID</label>
+                                    <input type="text" class="form-control" id="bookid" placeholder="教材教辅/热门书籍/语言文学/哲学理论/计算机">
+                                </div> -->
+                                <div class="form-group">
+                                    <label for="booktype">图书类别</label>
+                                    <input type="text" class="form-control" id="booktype" placeholder="教材教辅/热门书籍/语言文学/哲学理论/计算机">
+                                </div>
+                                <div class="form-group">
+                                    <label for="bookimg">图书图片</label>
+                                    <input type="text" class="form-control" id="bookimg" placeholder="请输入图片路径">
+                                </div>
+                                <div class="form-group">
+                                    <label for="booknum">剩余数目</label>
+                                    <input type="text" class="form-control" id="booknum" placeholder="请输入图书剩余数目">
+                                </div>
+                                <div class="form-group">
+                                    <label for="bookname">图书名称</label>
+                                    <input type="text" class="form-control" id="bookname" placeholder="请输入图书名称">
+                                </div>
+
+                                <button class="btn btn-primary" id="btnbook">提交添加</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">图书列表</h3>
+                        </div>
+                        <div class="panel-body row pre-scrollable">
+                            <table class="table table-bordered table-hover" id="booktable">
+                                <thead>
+                                    <tr>
+                                        <th>图书ID</th>
+                                        <th>图书类别</th>
+                                        <th>图书图片</th>
+                                        <th>图书数目</th>
+                                        <th>图书名称</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="list">
+                              
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div class="tab-pane fade" id="liutong">
+            <div class="row">
+                <div class="center-block" style="width: 60%;">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">已借图书</h3>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-bordered table-hover" id="borrowtable">
+                                <thead>
+                                    <tr>
+                                        <th>图书ID</th>
+                                        <th>图书名称</th>
+                                        <th>读者ID</th>
+                                        <th>时间</th>
+                                        <th>借书状态</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="list">
+                                  <!-- <tr>
+                                    <td>111</td>
+                                    <td>计算机网络</td>
+                                    <td>卢本伟</td>
+                                    <td><center><button class="btn btn-warning">催还</button></center></td>
+                                </tr> -->
+                            </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div class="tab-pane fade" id="dingdan">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">订单编辑</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form>
+                                <!-- <div class="form-group">
+                                    <label for="bookid">图书ID</label>
+                                    <input type="text" class="form-control" id="bookid" placeholder="教材教辅/热门书籍/语言文学/哲学理论/计算机">
+                                </div> -->
+                                <div class="form-group">
+                                    <label for="obookname">订购图书名称</label>
+                                    <input type="text" class="form-control" id="obookname" placeholder="请输入需要订购的图书名称">
+                                </div>
+                                <div class="form-group">
+                                    <label for="obookwriter">作者</label>
+                                    <input type="text" class="form-control" id="obookwriter" placeholder="请输入图书作者">
+                                </div>
+                                <div class="form-group">
+                                    <label for="obooknum">数量</label>
+                                    <input type="text" class="form-control" id="obooknum" placeholder="请输入需要订购的图书数量">
+                                </div>
+                                <!-- <div class="form-group">
+                                    <label for="bookname">订购时间</label>
+                                    <input type="text" class="form-control" id="bookname" placeholder="请输入图书名称">
+                                </div> -->
+                                <!-- <div class="form-group">
+                                    <label for="bookname">状态</label>
+                                    <input type="text" class="form-control" id="bookname" placeholder="请输入图书名称">
+                                </div> -->
+
+                                <button class="btn btn-primary" id="btnorder">提交订单</button>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">订单列表</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-bordered table-hover" id="ordertable">
+                            <thead>
+                                <tr>
+                                    <th>订单号</th>
+                                    <th>订购图书名称</th>
+                                    <th>作者</th>
+                                    <th>数量</th>
+                                    <!-- <th>订购时间</th> -->
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="list">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- model delete -->
+    <div class="modal fade" id="deleModal" tabindex="-1" role="dialog" aria-labelledby="">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">警告</h4>
+                </div>
+                <div class="modal-body">
+                    删除无法恢复
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        取消</button>
+                        <button type="button" class="btn btn-primary" id="confirmDelete">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- model update -->
+    <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">编辑</h4>
+                </div>
+                <div class="modal-body">
+                   <form>
+                            <!-- <div class="form-group">
+                                <label for="bookid">图书id</label>
+                                <input type="text" class="form-control" id="ubookid" placeholder="bookid">
+                            </div> -->
+                            <div class="form-group">
+                                <label for="booktype">图书类别</label>
+                                <input type="text" class="form-control" id="ubooktype" placeholder="请输入图书类别">
+                            </div>
+                     
+                            <div class="form-group">
+                                <label for="bookimg">图书图片</label>
+                                <input type="text" class="form-control" id="ubookimg" placeholder="请输入图片路径">
+                            </div>
+                            <div class="form-group">
+                                <label for="booknum">剩余数目</label>
+                                <input type="text" class="form-control" id="ubooknum" placeholder="请输入剩余数目">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="ubookname">图书名称</label>
+                                <input type="text" class="form-control" id="ubookname" placeholder="请输入图书名称">
+                            </div>
+                           
+                        </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        取消</button>
+                        <button type="button" class="btn btn-primary" id="confirmUpdate">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>  
+    <!-- model updatestaff --> 
+    <div class="modal fade" id="updateStaffModal" tabindex="-1" role="dialog" aria-labelledby="">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">编辑</h4>
+                </div>
+                <div class="modal-body">
+                   <form>
+                            <!-- <div class="form-group">
+                                <label for="bookid">图书id</label>
+                                <input type="text" class="form-control" id="ubookid" placeholder="bookid">
+                            </div> -->
+                            <div class="form-group">
+                                <label for="uname">员工姓名</label>
+                                <input type="text" class="form-control" id="uname" placeholder="请输入员工姓名">
+                            </div>
+                     
+                            <div class="form-group">
+                                <label for="usex">员工性别</label>
+                                <input type="text" class="form-control" id="usex" placeholder="请输入员工性别">
+                            </div>
+                            <div class="form-group">
+                                <label for="uage">员工年龄</label>
+                                <input type="text" class="form-control" id="uage" placeholder="请输入员工年龄">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="utype">员工职能</label>
+                                <input type="text" class="form-control" id="utype" placeholder="请输入员工职能(入库管理员、流通管理员、订单管理员)">
+                            </div>
+                           
+                        </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        取消</button>
+                        <button type="button" class="btn btn-primary" id="confirmUpdate">确认</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!-- model finish -->
+    <div class="modal fade" id="finModal" tabindex="-1" role="dialog" aria-labelledby="">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">警告</h4>
+                </div>
+                <div class="modal-body">
+                    确定订单已完成？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        取消</button>
+                        <button type="button" class="btn btn-primary" id="confirmFinish">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- model unfinish -->
+    <div class="modal fade" id="unfinModal" tabindex="-1" role="dialog" aria-labelledby="">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">警告</h4>
+                </div>
+                <div class="modal-body">
+                    确定订单未完成？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        取消</button>
+                        <button type="button" class="btn btn-primary" id="confirmUNFinish">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- model borrow -->
+    <div class="modal fade" id="borrowModal" tabindex="-1" role="dialog" aria-labelledby="">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">警告</h4>
+                </div>
+                <div class="modal-body">
+                    确定催还？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        取消</button>
+                        <button type="button" class="btn btn-primary" id="confirmBorrow">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- model normal -->
+    <div class="modal fade" id="normalModal" tabindex="-1" role="dialog" aria-labelledby="">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">警告</h4>
+                </div>
+                <div class="modal-body">
+                    确定恢复正常？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        取消</button>
+                        <button type="button" class="btn btn-primary" id="confirmNormal">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="./js/staff.js"></script>
+<script src="./js/admin.js"></script>
+<script src="./js/order.js"></script>
+<script src="./js/cuihuan.js"></script>
+</body>
+
+</html>

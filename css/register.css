@@ -1,0 +1,47 @@
+html{
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    font-size: 62.5%;
+
+}
+body{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    line-height: 1.5;
+}
+a{
+    text-decoration: none;
+    margin: 0 3px;
+}
+.main-box{
+    margin:5% auto 0;
+    background:#e7e7e7;
+    width:350px;
+    padding: 25px;
+    border-radius: 3%;
+    opacity:0.8;
+}
+
+.form-control,.btn{
+    border-radius: 3;
+}
+.vcode{
+    display: inline-block;
+    width: 100px;
+    margin-right: 10px;
+}
+.form-header{
+    font-family:  Microsoft Yahei;
+    margin: 0 0 10px;
+    text-align: center;
+}
+.form-header img{
+    height: 48px;
+    width: 48px;
+}
+.extra{
+    font-size: 12px;
+    display: inline-block;
+    margin:10px 10px 0 0;
+}

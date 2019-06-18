@@ -1,0 +1,70 @@
+html{
+	width: 100%;
+	height: 100%;
+	overflow: scroll;
+	font-size: 62.5%;
+
+}
+body, div, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, iframe, input, textarea, select, label, article, aside, footer, header, menu, nav, section, time, audio, video{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: Microsoft Yahei;
+}
+
+.tab-content{
+	margin-top: 100px;
+}
+
+
+.panel-body .left{
+	float: left;
+	margin-left: 20px;
+}
+.panel-body .left img{
+	width: 200px;
+	height: 200px;
+}
+.panel-body .right{
+	width:600px;
+	float: left;
+	margin-left: 100px;
+}
+
+.panel-body .right ul li{
+	font-size: 18px;
+	color: #666666;
+}
+.panel-body .right ul li:nth-child(1){
+	margin-top: 10px;
+
+}
+.panel-body .right ul li:nth-child(2){
+	margin-top: 15px;
+
+}
+.panel-body .right ul li:nth-child(3){
+	margin-top: 15px;
+
+}
+.panel-body .right ul li:nth-child(4){
+	margin-top: 15px;
+
+}
+.panel-body .right ul li:nth-child(5){
+	margin-top: 15px;
+
+}
+
+
+.panel-body .bottom{
+	box-sizing: border-box;
+	float: left;
+	margin-left: 40px;
+	margin-top: 250px;
+}
+
+.cancel{
+	margin-left: 10px;
+}
+

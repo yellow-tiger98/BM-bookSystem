@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>用户信息页</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/user.css">
+</head>
+<body>
+<script type="text/javascript" color="255,0,0" opacity='0.7' zIndex="-2" count="200" src="../js/canvas-nest.js"></script>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation top">
+	<div class="container-fluid top">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+        <span class="sr-only">切换导航</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+      <a  href="#" class="navbar-brand nav-title title">BM图书管理系统</a>
+    </div>
+
+	<!-- 导航栏右侧标签 begin -->
+    <div class="collapse navbar-collapse" id="navbar-menu">
+      <ul class="nav navbar-nav navbar-right ">
+        <li id="click1" class="active"><a href="#p-information" data-toggle="tab">个人信息</a></li>
+        <li id="click2"><a href="#borrow"  data-toggle="tab" >已借书籍</a></li>
+        <li id="click3"><a href="#yuyue"  data-toggle="tab" >预约书籍</a></li>
+        
+        <li id="click4"><a id="name" ><span class="glyphicon glyphicon-log-in"></span> 退出登录</a></li>
+      </ul>
+
+		</div>
+		<!-- 导航栏右侧标签 end -->
+		
+	</div>
+	</nav>
+		<!-- 响应式导航条end -->
+		<!-- 个人信息tab显示 begin -->
+		<div id="myTabContent" class="tab-content container">
+    <div class="tab-pane fade in active" id="p-information">
+       <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            个人信息
+        </h3>
+    </div>
+    <div class="panel-body">
+      	<div id="pic" class="left">
+   		 	<img class="img-responsive" src="../images/man.jpg">
+   		 </div>
+   		 <div id="list" class="right">
+   		 	<ul class="list-unstyled">
+   		 		<li>读者id：111</li>
+   		 		<li>读者姓名：111</li>
+   		 		<li>读者邮箱：111</li>
+   		 		<li>读者性别：111</li>
+   		 		<li>读者年龄：111</li>
+   		 	</ul>
+   		 </div>
+   		 <div class="bottom">
+   		 <div  class="button1">
+   		 	<button id="edit" type="button" class="btn btn-primary btn-lg ">编辑</button>
+   		 </div>
+ 		 </div>
+    </div>
+</div>
+    </div>
+    	<!-- 个人信息tab显示 end -->
+    	<!-- 已借书籍tab显示 begin -->
+    <div class="tab-pane fade " id="borrow">
+       <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            已借书籍
+        </h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-bordered table-hover" id="borrowtable">
+                            <thead>
+                                <tr>
+                                    <th>书籍id</th>
+                                    <th>书籍姓名</th>
+                                    <th>借书时间</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                  
+                                </tr>
+                            </thead>
+                            <tbody id="list">
+
+                            </tbody>
+                        </table>
+    </div>
+</div>
+    </div>
+    	<!-- 已借书籍tab显示 end -->
+
+    	<!-- 预约书籍tab显示 begin -->
+    <div class="tab-pane fade " id="yuyue">
+       <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            预约书籍
+        </h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-bordered table-hover" id="yuyuetable">
+                            <thead>
+                                <tr>
+                                    <th>书籍id</th>
+                                    <th>书籍姓名</th>
+                                    <th>预约时间</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="list">
+
+                            </tbody>
+                        </table>
+    </div>
+</div>
+    </div>
+    	<!-- 预约书籍tab显示 end -->
+    	</div>
+
+
+    	<!-- 用户信息编辑 begin -->
+    <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">编辑</h4>
+                </div>
+                <div class="modal-body">
+                   <form>
+                            <div class="form-group">
+                                <label for="userid">读者id</label>
+                                <input type="text" class="form-control" id="uid" placeholder="userid" readonly="readonly">
+                            </div>
+                            <div class="form-group">
+                                <label for="username">读者姓名</label>
+                                <input type="text" class="form-control" id="uname" placeholder="username">
+                            </div>
+                     
+                            <div class="form-group">
+                                <label for="useremial">读者邮箱</label>
+                                <input type="text" class="form-control" id="uemail" placeholder="e-mial" readonly="readonly">
+                            </div>
+                            <div class="form-group">
+                                <label for="usersex">读者性别</label>
+                                <input type="text" class="form-control" id="usex">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="uerage">读者年龄</label>
+                                <input type="text" class="form-control" id="uage">
+                            </div>
+                           
+                        </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        取消</button>
+                        <button type="button" class="btn btn-primary" id="confirmUpdate">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 用户信息编辑 end -->
+
+    <!-- 取消预约提示 begin -->
+    <div class="modal fade" id="deleModal" tabindex="-1" role="dialog" aria-labelledby="">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">警告</h4>
+                </div>
+                <div class="modal-body">
+                    取消无法恢复
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        取消</button>
+                        <button type="button" class="btn btn-primary" id="confirmDelete">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 取消预约提示 end -->
+
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../js/user.js"></script>
+</body>
+</html>

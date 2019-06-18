@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>注册</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/register.css">
+</head>
+<body>
+<script type="text/javascript" color="255,0,0" opacity='0.7' zIndex="-2" count="200" src="../js/canvas-nest.js"></script>
+<nav class="navbar navbar-default navbar-fixed-top " role="navigation top">
+	<!-- banner begin -->
+	<div class="container-fluid top">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+        <span class="sr-only">切换导航</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+      <a  href="#" class="navbar-brand nav-title title">BM图书管理系统</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-menu">
+      <ul class="nav navbar-nav navbar-right ">
+      <li id="click"><a href="../index.html" class="glyphicon glyphicon-home"  ></a></li>
+      <li id="click"><a href="#" class="glyphicon glyphicon-refresh"  ></a></li>
+      </ul>
+	</nav>
+	<!-- banner end -->
+<form class="main-box" role="form" action="" method="post">
+    <h3 class="form-header">读者注册</h3>
+    <div class="form-group">
+        <label for="email">邮箱：</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="请输入您的邮箱">
+    </div>
+      <div class="form-group">
+        <label for="username">姓名：</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="请输入您的姓名">
+    </div>
+    <div class="form-group">
+        <label for="sex">性别：</label>
+        <input type="text" class="form-control" id="sex" name="sex" placeholder="请输入您的性别">
+    </div>
+    <div class="form-group">
+        <label for="age">年龄：</label>
+        <input type="text" class="form-control" id="age" name="age" placeholder="请输入您的年龄">
+    </div>
+    <div class="form-group">
+        <label for="pwd">密码：</label>
+        <input type="password" class="form-control" id="pwd" name="password" placeholder="请输入您的密码">
+    </div>
+    
+    <button type="submit" class="btn btn-primary btn-block">注册</button>
+</form>
+
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/register.js"></script>
+</body>
+</html>

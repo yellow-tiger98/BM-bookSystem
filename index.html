@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>首页</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+</head>
+<body>
+<script type="text/javascript" color="255,0,0" opacity='0.7' zIndex="-2" count="200" src="./js/canvas-nest.js"></script>
+	<!-- 响应式导航条begin -->
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation top">
+	<div class="container-fluid top">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+        <span class="sr-only">切换导航</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+      <a  href="#" class="navbar-brand nav-title title">BM图书管理系统</a>
+    </div>
+
+	<!-- 导航栏右侧标签 begin -->
+    <div class="collapse navbar-collapse" id="navbar-menu">
+      <ul class="nav navbar-nav navbar-right ">
+      <!-- 导航栏搜索框 begin -->
+       <form class="navbar-form navbar-left" method="post" target="id_frame">
+            <div class="form-group">
+                <input type="text" id="bn" class="form-control" placeholder="请输入书名">
+            </div>
+            <button type="submit" id="search" class="btn btn-default">查询</button>
+            <iframe id="id_frame" name="id_frame" style="display:none;"></iframe>
+        </form>
+        <!-- 导航栏搜索框end -->
+        <li id="click" class="active"><a href="#" data-toggle="tab">教材教辅</a></li>
+        <li id="click"><a href="#"  data-toggle="tab" >热门书籍</a></li>
+        <li id="click"><a href="#"  data-toggle="tab" >语言文学</a></li>
+        <li id="click"><a href="#"  data-toggle="tab">哲学理论</a></li>
+        <li id="click"><a href="#"  data-toggle="tab">计算机</a></li>
+        <li><a href="./views/register.html"><span class="glyphicon glyphicon-user"></span> 注册</a></li> 
+        <li><a id="name" href="./views/login.html"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+      </ul>
+
+		</div>
+		<!-- 导航栏右侧标签 end -->
+		
+	</div>
+	</nav>
+	<!-- 响应式导航条end -->
+
+	<!-- 内容区域 -->
+	<div id="main" class="container">
+        <div id="list">
+            <ul>
+                
+            </ul>
+            </div>
+        </div>
+   </div>
+        <!--分页条  -->
+        <div id="pagecount"></div>
+    </div>
+<footer>
+	<div class="jumbotron text-center" style="margin-bottom:0">
+   		<p style="font-size: 15px">免责声明：本网站仅为作业设计，书籍等信息不用于商用，仅供参考<br>若侵犯了您的版权，请与我联系，邮箱：943664394@qq.com
+   		<br>@BM图书管理系统-VERSION:0.0.1</p>
+  </div>
+  </footer>
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./js/index.js"></script>
+</body>
+</html>
