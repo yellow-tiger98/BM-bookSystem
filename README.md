@@ -24,3 +24,8 @@
 * sql文件已经提供，若导入有乱码可以复制sql语句手动创建
 * Bootstrap自适应不完善，基本只是使用里面的样式
 ### 项目截图
+![Image text](https://raw.githubusercontent.com/yellow-tiger98/BM-bookSystem/master/readme/1.png)
+![Image text](https://raw.githubusercontent.com/yellow-tiger98/BM-bookSystem/master/readme/2.png)
+![Image text](https://raw.githubusercontent.com/yellow-tiger98/BM-bookSystem/master/readme/3.png)
+![Image text](https://raw.githubusercontent.com/yellow-tiger98/BM-bookSystem/master/readme/4.png)
+![Image text](https://raw.githubusercontent.com/yellow-tiger98/BM-bookSystem/master/readme/5.png)
